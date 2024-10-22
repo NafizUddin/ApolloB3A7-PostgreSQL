@@ -88,13 +88,47 @@ WHERE student_id = (
 
 
 -- Query-04
+-- Delete all courses that have no students enrolled.
+
+DELETE FROM courses
+WHERE course_id NOT IN (
+    SELECT DISTINCT course_id
+    FROM enrollment
+);
+
+-- In the above query, I have used DELETE statement with a subquery to identify those courses. I applied 'NOT IN' to identify course IDs that do not appear in the enrollment table. 
+
 
 -- Query-05
+-- Retrieve the names of students using a limit of 2, starting from the 3rd student.
+
+SELECT student_name from students
+LIMIT 2 OFFSET 2;
+
+-- In the above query, I have used LIMIT 2 to get only 2 names of the students and used OFFSET 2 to get the names of the students starting from the 3rd student.
 
 -- Query-06
+-- Retrieve the course names and the number of students enrolled in each course.
+
+SELECT c.course_name, count(e.student_id) as students_enrolled
+FROM courses c 
+JOIN enrollment e ON c.course_id = e.course_id
+GROUP BY c.course_name;
+
+-- In the above query, I have joined the courses and enrollment tables,made group by course name and used 'count' to display the number of students for each course. 
 
 -- Query-07
+-- Calculate and display the average age of all students.
+
+SELECT ROUND(AVG(age), 2) as average_age FROM students;
+
+-- In the above query, I have calculated the average age of students from the students table and rounds the result to two decimal places. The output is labeled as 'average_age.'
 
 -- Query-08
+-- Retrieve the names of students whose email addresses contain 'example.com'.
 
--- Query-09
+SELECT student_name FROM students
+WHERE email LIKE '%example.com%';
+
+-- In thw above query, I have used the LIKE operator with a wildcard to match any email that includes 'example.com'.
+
