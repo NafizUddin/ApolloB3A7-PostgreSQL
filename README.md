@@ -50,7 +50,7 @@ This document serves as a concise reference for key concepts and features in Pos
 
 10. **How can you calculate aggregate functions like COUNT, SUM, and AVG in PostgreSQL?**
 
-In PostgreSQL, aggregate functions like `COUNT`, `SUM`, and `AVG` are used to perform calculations on a set of rows and return a single value. `COUNT()` is used to count the number of rows, `SUM()` adds up all values in a column, and `AVG()` calculates the average of a numeric column. These functions are typically used with the GROUP BY clause to apply them to specific groups of data.
+    In PostgreSQL, aggregate functions like `COUNT`, `SUM`, and `AVG` are used to perform calculations on a set of rows and return a single value. `COUNT()` is used to count the number of rows, `SUM()` adds up all values in a column, and `AVG()` calculates the average of a numeric column. These functions are typically used with the GROUP BY clause to apply them to specific groups of data.
 
 11. **What is the purpose of an index in PostgreSQL, and how does it optimize query performance?**  
     An index in PostgreSQL is used to enhance query performance by allowing faster retrieval of records from a table. It works by creating a data structure that provides quick lookup capabilities, reducing the need to scan entire tables for matching rows. Indexes are especially beneficial for large datasets, improving the efficiency of `SELECT`, `JOIN`, and `WHERE` operations. While indexes speed up read operations, they can slow down write operations (like `INSERT`, `UPDATE`, or `DELETE`) as the index must be updated, so their usage should be carefully planned.
