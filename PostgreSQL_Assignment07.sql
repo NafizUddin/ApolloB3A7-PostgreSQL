@@ -88,7 +88,7 @@ WHERE student_id = (
 
 
 -- Query-04
--- Delete all courses that have no students enrolled.
+-- Delete all courses that no students have enrolled.
 
 DELETE FROM courses
 WHERE course_id NOT IN (
@@ -96,7 +96,7 @@ WHERE course_id NOT IN (
     FROM enrollment
 );
 
--- In the above query, I have used DELETE statement with a subquery to identify those courses. I applied 'NOT IN' to identify course IDs that do not appear in the enrollment table. 
+-- In the above query, I have used DELETE statement with a subquery to identify the courses that no students have enrolled. I applied 'NOT IN' to identify course IDs that do not appear in the enrollment table. 
 
 
 -- Query-05
